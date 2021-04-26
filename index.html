@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html lang="fr">  
+
+    <head>
+        <title>Recette gateau au chocolat</title>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Cette ligne veut dire qu’il faut prendre en compte la largeur de l’écran pour l’affichage de notre page HTML.-->
+        <link rel="stylesheet" href="table_recette_responsive.css"> <!--rel: relation-->
+    </head>
+
+    <body>
+        <!--pour des texte trop long pour aller à la ligne automatiquement, aller dans l'onglet "view", puis cliquer sur "Toogle Word wrap" (quand Toogle Word Wrap est actif, vous verrez qu'il est coché)-->
+        
+        <div class ="contenu">
+
+            <div class="centre categorie">
+                <p class="categorie">Recette</p>
+            </div>
+
+            <h1>Le gateau au chocolat</h1>
+
+            <div class="separateur">
+
+            </div>
+            
+            <div class="centre">
+                <p class="description">«Cette recette facile du gateau au chocolat est un grand classique.Elle fera plaisir aux plus gourmands.»</p>
+            </div>
+
+            <!--
+                position prend par défaut la valeur "static" qui veux dire que l'élément se positionne comme on le met.
+                la valeur "relative" permet de repositonner par rapport à sa position d'origine. permet aussi aux éléments enfants de venir utiliser la propriété position "absolute". on va dire que notre table on va venir l'afficher de façon absolue à la fin de notre div. si je suis absolute, ma table en soit n'occupe plus d'espace, ce n'est que l'espace de l'image qui va faire la taille de la div
+            -->
+            <!--couleur en hexadecimal: #6C829DC0. 6C quantité de rouge, 82 quantité de vert, 9D quantité de bleu, C0 transparente ou opacity. CO est très souvent utilisé pour l'opacity-->
+
+            <!--Pensez bien à display:block lorsqu'on a les problèmes d'alignement d'image ou autre élément de type inline-->
+
+            <div class ="info">
+                <img class="centre info" src="https://jonathanroux.com/gateau.jpg?id=9999"> <!--?id=9999: permet de recharger l'image avant de l'afficher pour nous permettre de voir le background color avant l'affichage: juste pour les tests -->
+
+                <table class ="info">
+                    <tr><th>Difficulté</th><th>Préparation</th><th>Cuisson</th><th>Temps total</th></tr>
+                    <tr><td>Facile</td><td>10 min</td><td>25 min</td><td>35 min</td></tr>
+                </table>
+            </div>
+            <div>
+                <div class="colonne1 colonne">
+                    <h2>Ingrédients</h2>
+                    <div class="ingredients">
+                        <p>Chocolat noir : 200 g</p>
+                        <p>Sucre : 150 g</p>
+                        <p>Beurre : 200 g</p>
+                        <p>Oeufs : 4</p>
+                        <p>Farine : 80 g</p>
+                    </div>
+                </div>
+
+                <div class="colonne2 colonne">
+                    <h2>Préparation</h2>
+                    <table class ="preparation">
+                        <tr><td><p class="numero">1</p></td><td class = "preparation_etape">Faire fondre le chocolat avec le Beurre</td></tr>
+                        <tr><td><p class="numero">2</p></td><td class = "preparation_etape">Mélanger le sucre, les oeufs et la farine</td></tr>
+                        <tr><td><p class="numero">3</p></td><td class = "preparation_etape">Mélanger le tout pour faire une pate</td></tr>
+                        <tr><td><p class="numero">4</p></td><td class = "preparation_etape">Mettre au four</td></tr>
+                        <tr><td><p class="numero">5</p></td><td class = "preparation_etape">Farine : 80 g</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>  
+    </body>
+
+</html>
