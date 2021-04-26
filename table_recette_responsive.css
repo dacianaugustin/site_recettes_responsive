@@ -1,0 +1,211 @@
+
+/*
+display block permet à un élément d'occuper la ligne complètement.
+display inline veut dire que tu vas occuper que la place necessaire et tu vas autoriser les autres éléments à s'afficher par derrière. le mode inline n'est pas influencé par les propriétés qui gèrent la taille comme width, margin-top, margin-bottom.
+display inline-block c'est toujours le mode inline mais cette fois ci on aura plus de controle au niveau des marges et des tailles. 
+*/
+
+/* Lorsqu'on utilise un float cela fait en sorte que la taille des éléments ne dépend plus de la div, ainsi cela entraine le débordement des éléments du container. pour résoudre ces problèmes de débordement, on utilise overflow */
+
+*{
+overflow: auto; /* "*" veut dire qu'on sélectionne tout le monde. "overflow: auto" veut dire que pour tout débordement, adapter la taille du conteneur à la taille du texte.*/
+}
+
+body{
+background-color: #8BA1BB;
+font-family: Arial;
+margin: 0;
+}
+
+p.categorie{
+background-color: black;
+color: white;
+display: inline-block;
+margin-top: -15px;
+padding: 8px 18px; /* sur les hauteurs et sur les largeur */
+margin-bottom: 0px;
+font-weight: bold;
+font-size: 16px;
+}
+
+div.categorie{
+margin-bottom: 0px;
+margin-top: 0px;
+overflow: visible;
+}
+
+div.contenu{
+background-color: white;
+margin: 40px 8px 40px 8px;
+padding:  0 8px  20px 8px;
+/*min-width: 510px; /* pour eviter qu'on reduise trop la largeur pour ne pas deformer le texte */
+box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+overflow: visible;
+}
+
+h1{
+text-align: center;
+margin-bottom: 12px;
+margin-top: 10px;
+}
+
+p.description{
+text-align: center;
+max-width: 400px;
+display: inline-block;
+font-size: 14px;
+}
+
+.centre{
+text-align: center;
+width: 100%; /* prend 100% de l'espace de la fenetre */
+}
+
+/* auto: technique pour centrer lorsque l'élément n'est pas du texte*/
+div.separateur{
+width: 100px;
+height: 1px;
+background-color: black;
+margin-left: auto;          
+margin-right: auto;
+}
+
+table.info{
+position: absolute; 
+bottom: 0; 
+width: 100%; 
+color: white; 
+background-color: #6C829DC0; 
+height: 50px;
+}
+
+div.info{
+position: relative;
+}
+
+table.info td{
+text-align: center;
+font-size: 12px;
+vertical-align: top; /* on aligne le texte vers le haut pour serrer un peu sur le th*/
+}
+
+table.info th{
+font-size: 14px;
+vertical-align: bottom; 
+padding-bottom: 8px;
+}
+
+img.info{
+display: block;
+max-height: 400px; 
+object-fit: cover; /*Permet de faire en sorte que l'image s'adapte à la fenêtre lorsqu'on étire l'écran, donc permet de garder les proportions de l'image et evite les éffets de déformation de l'image. On perd ainsi la taille de l'image sur les bordures mais c'est mieux.*/
+min-height: 200px; /*évite lorsque l'image n'est pas chargée que les autres éléments se supperposent entre eux.*/
+background-color: lightgray; /*couleur de fond en attendant que l'image se charge*/
+}
+
+div.colonne{
+width: 100%;
+}
+
+div.colonne1{
+display: inline-block;
+/*margin-right: 10%;*/
+}
+div.colonne2{
+/*float: right; /* met toi à droite */
+}
+
+div.colonne h2{
+text-align: center;
+text-transform: uppercase; /* mettre en majuscule */
+font-size: 15px;
+margin-top: 20px;
+border-bottom: 5px solid #6C829D;
+padding-bottom: 5px;
+}
+
+div.ingredients p{
+text-align: center;
+border: 1px solid lightgray;
+font-size: 14px;
+padding: 8px 0px;
+margin-top: 4px;
+margin-bottom: 0;
+}
+
+table.preparation p.numero{
+background-color: #6C829D;
+color: white;
+width: 25px;
+height: 25px;
+text-align: center;
+font-size: 14px;
+font-weight: bold;
+padding-top: 4px;
+box-sizing: border-box; /*box-sizing permet de faire en sorte que la taille du box soit celle du height même si on a mi un padding-top de 10px*/
+border-radius: 50%; /*permet d'avoir les bordures arrondies, et 50% est la valeur qui permet d'avoir un cercle*/
+margin:0;
+}
+
+table.preparation td{
+vertical-align: top;
+}
+
+table.preparation td.preparation_etape{
+font-size: 14px;
+padding-left: 10px;
+padding-bottom: 10px;
+}
+
+table.preparation tr{
+height: 40px;
+}
+
+/* Style pour ordinateur*/
+
+@media only screen and (min-width: 768px) {
+
+    div.contenu{
+        min-width: 350px;
+        margin: 60px 10% 80px 10%;
+        padding:  0 30px  30px 30px;
+    }
+
+    table.info{
+        height: 80px;
+        }
+        
+        table.info td{
+        font-size: 14px;
+        }
+        
+        table.info th{
+        font-size: 16px;
+        }
+
+        div.colonne{
+            width: 45%;
+            }
+            
+            div.colonne1{
+            margin-right: 10%;
+            }
+
+            div.colonne2{
+            float: right; /* met toi à droite */
+            }
+}
+
+/* Style pour ecran trop grand*/
+
+@media only screen and (min-width: 900px) {
+
+    div.contenu{
+        background-color: white;
+        margin-left: auto;
+        margin-right: auto;
+        width: 645px;
+    }
+
+}
+
